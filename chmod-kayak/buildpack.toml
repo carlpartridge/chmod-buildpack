@@ -7,4 +7,4 @@ WithLinuxBuild = false
   version = "0.0.1"
 
 [[stacks]]
-  id = "io.buildpacks.samples.stacks.jammy"
+  id = "io.buildpacks.stacks.jammy"

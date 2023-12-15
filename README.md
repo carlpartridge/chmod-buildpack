@@ -1,6 +1,15 @@
 # Used in Kayak
 Kayak uses Paketo buildpacks to create its image.  Currently the runtime user is unable to modify the contents of its own workspace resulting in various permission errors which crash the container.  See chmod-buildpack/bin/build for the shell commands that chmod the necessary files.
 
+# How to use
+We built our own custom buildpack (see chmod-kayak dir).  This is super simple and basically just executes a bunch of shell commands (see chmod-kayak/bin/build).  It is built using pack (https://buildpacks.io/docs/tools/pack/) and pushed up to gcr using docker.  It is then used as part of the kayak cloudbuild.
+After modifying the package you can build it and push it up doing:
+- `cd chmod-kayak`
+- `pack buildpack package us.gcr.io/bdt-data-sci-{stage|prod}/chmod-kayak --config ./package.toml`
+- `docker push us.gcr.io/bdt-data-sci-{stage|prod}/chmod-kayak:latest   `
+
+# Documentation from forked repo
+
 # Chmod buildpack
 
 A demonstration of a buildpack that can change permissions to the folders and files of the default workspace of a Paketo build.

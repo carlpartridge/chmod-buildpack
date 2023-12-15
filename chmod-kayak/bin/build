@@ -10,14 +10,17 @@ echo "---> Chmod buildpack"
 
 # LIST CONTENTS
 echo "Before"
+pwd
 ls -als
 echo "Updating rights"
 set -x
-chmod -R 777 tmp/pids
-chmod -R 755 Gemfile.lock
+chmod -R 777 tmp
+chmod -R 777 Gemfile.lock
 set +x
 echo "After"
+pwd
 ls -als
+ls -als tmp
 
 echo "---> Done Chmod Buildpack"
 
