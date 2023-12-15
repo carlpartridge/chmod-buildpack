@@ -1,3 +1,6 @@
+# Used in Kayak
+Kayak uses Paketo buildpacks to create its image.  Currently the runtime user is unable to modify the contents of its own workspace resulting in various permission errors which crash the container.  See chmod-buildpack/bin/build for the shell commands that chmod the necessary files.
+
 # Chmod buildpack
 
 A demonstration of a buildpack that can change permissions to the folders and files of the default workspace of a Paketo build.

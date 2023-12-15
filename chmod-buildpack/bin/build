@@ -5,11 +5,13 @@ echo "---> Chmod buildpack"
 
 # LIST CONTENTS
 echo "Before"
-ls -al
-echo "Updating rights for activemq"
+ls -als
+echo "Updating rights"
 set -x
-chmod -R 775 ./
-chmod -R 755 **/bin/**
+chmod -R 777 tmp/pids
+chmod -R 755 Gemfile.lock
 set +x
 echo "After"
-ls -al
+ls -als
+
+echo "---> Done Chmod Buildpack"
