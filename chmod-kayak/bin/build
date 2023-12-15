@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+layers_dir="$1"
+env_dir="$2/env"
+plan_path="$3"
+
+echo "---> Chmod buildpack"
+
+# LIST CONTENTS
+echo "Before"
+ls -als
+echo "Updating rights"
+set -x
+chmod -R 777 tmp/pids
+chmod -R 755 Gemfile.lock
+set +x
+echo "After"
+ls -als
+
+echo "---> Done Chmod Buildpack"
+
+exit 0

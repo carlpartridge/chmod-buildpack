@@ -1,0 +1,10 @@
+api = "0.8"
+WithWindowsBuild = false
+WithLinuxBuild = false
+
+[buildpack]
+  id = "chmod-kayak"
+  version = "0.0.1"
+
+[[stacks]]
+  id = "io.buildpacks.samples.stacks.jammy"
